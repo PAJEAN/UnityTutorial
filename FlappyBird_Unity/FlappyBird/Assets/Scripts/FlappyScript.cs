@@ -18,6 +18,7 @@ public class FlappyScript : MonoBehaviour
     {
         // Alternative.
         // myRigidBody = GetComponent<Rigidbody2D>();
+        
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Manager>();
         _audioSource = GetComponent<AudioSource>();
     }
