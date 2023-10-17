@@ -21,6 +21,9 @@ public class FlappyScript : MonoBehaviour
         
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Manager>();
         _audioSource = GetComponent<AudioSource>();
+
+
+        Debug.Log(Physics.gravity);
     }
 
     // Update is called once per frame
@@ -31,6 +34,11 @@ public class FlappyScript : MonoBehaviour
             myRigidBody.velocity = Vector2.up * flyMove;
         }
     }
+
+    /*private void FixedUpdate()
+    {
+        myRigidBody.AddForce(new Vector2(0, 9.81f));
+    }*/
 
     void OnCollisionEnter2D(Collision2D collision)
     {

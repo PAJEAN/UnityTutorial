@@ -9,6 +9,11 @@ public class SpawnScript : MonoBehaviour
     float timeBetween = 2f;
     float currentTime = 0f;
 
+    private void Awake()
+    {
+        Debug.Log("Spawn");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
