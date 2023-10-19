@@ -8,3 +8,14 @@ FlappyBird_Unity/FlappyBird/FlappyBird.sln
 FlappyBird_Unity/FlappyBird/.vs/
 FlappyBird_Unity/FlappyBird/.vsconfig
 FlappyBird_Unity/FlappyBird/Build
+
+FlappyBird_Unity/RollingABall/Library
+FlappyBird_Unity/RollingABall/Logs
+FlappyBird_Unity/RollingABall/obj
+FlappyBird_Unity/RollingABall/Temp
+FlappyBird_Unity/RollingABall/UserSettings
+FlappyBird_Unity/RollingABall/Assemby-CSharp.csproj
+FlappyBird_Unity/RollingABall/FlappyBird.sln
+FlappyBird_Unity/RollingABall/.vs/
+FlappyBird_Unity/RollingABall/.vsconfig
+FlappyBird_Unity/RollingABall/Build
