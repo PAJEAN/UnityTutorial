@@ -24,9 +24,9 @@ public class Manager : MonoBehaviour
         
     }
 
-    public void AddPoint()
+    public void AddPoint(int point = 1)
     {
-        score += 1;
+        score += point;
         scoreText.text = score.ToString();
     }
 
