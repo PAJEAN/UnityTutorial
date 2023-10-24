@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class BallController : MonoBehaviour
     public float boostSpeed = 15f;
     public float maxBoostValue = 3f;
 
+    public Text speedText;
+    public Text boostText;
 
     private float _xInput;
     private float _zInput;
@@ -58,6 +61,16 @@ public class BallController : MonoBehaviour
     void FixedUpdate()
     {
         _rb.AddForce(new Vector3(_xInput, 0f, _zInput) * _currentSpeed);
-        Debug.Log(_xInput + " " + _zInput + " " + _currentSpeed + " " + _currentBoostValue);
+
+        speedText.text = Mathf.RoundToInt(Mathf.Abs(_rb.velocity.z)).ToString();
+        boostText.text = Mathf.RoundToInt(_currentBoostValue).ToString();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Wall"))
+        {
+            Debug.Log("Oups");
+        }
     }
 }
