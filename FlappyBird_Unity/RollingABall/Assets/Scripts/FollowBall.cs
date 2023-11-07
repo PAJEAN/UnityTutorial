@@ -24,18 +24,25 @@ public class FollowBall : MonoBehaviour
         /*transform.position = target.transform.position + new Vector3(xOffset, yOffset, zOffset);*/
         transform.LookAt(target.transform.position);
 
+        
+
         /*transform.Translate(Vector3.right * Time.deltaTime);*/
 
-        float distance = Vector3.Distance(this.transform.position, target.transform.position);
+        // float distance = Vector3.Distance(this.transform.position, target.transform.position);
 
-        if (distance > 7 )
-        {
+        // if (distance > 7 )
+        // {
             /*Vector3 dir = (this.transform.position - target.transform.position).normalized;
             Debug.Log(dir);
             Vector3 desiredPosition = dir * 5 + target.transform.position;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 0.5f);
             transform.position = smoothedPosition;*/
-        }
+        // }
+    }
+
+    private void LateUpdate()
+    {
+        /*transform.position = target.transform.position + new Vector3(xOffset, yOffset, zOffset);*/
     }
 
     private void FixedUpdate()

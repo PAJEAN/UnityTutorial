@@ -11,6 +11,10 @@ public class BallControllerGolf : MonoBehaviour
     public float baseSpeed = 2000f;
     public float maxTimeSpaceKeyDown = 3f;
 
+
+    private Vector3 _offset;
+    private Vector3 _velocity = Vector3.zero;
+
     public Camera camera;
 
     public Text speedText;
@@ -26,6 +30,11 @@ public class BallControllerGolf : MonoBehaviour
     private float _currentBoostValue;
     private Vector3 _currentSpeed;
 
+    private void Awake()
+    {
+        _offset = camera.transform.position - transform.position;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +44,6 @@ public class BallControllerGolf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotateCamera();
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _spaceDown = true;
@@ -79,6 +86,11 @@ public class BallControllerGolf : MonoBehaviour
         /*camera.transform.position = Vector3.MoveTowards(camera.transform.position, this.transform.position, -(7f - Vector3.Distance(camera.transform.position, this.transform.position)));*/
     }
 
+    private void LateUpdate()
+    {
+        RotateCamera();
+    }
+
     void FixedUpdate()
     {
         if (_spaceUpEvent)
@@ -114,9 +126,14 @@ public class BallControllerGolf : MonoBehaviour
 
         }
 
-        Vector3 delta = camera.transform.position - transform.position;
-        /*delta.y = 0; // Keep same Y level*/
+        
+        /*Vector3 delta = camera.transform.position - transform.position;
+        *//*delta.y = 0; // Keep same Y level*//*
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, transform.position + delta.normalized * 7, 0.5f);
-        camera.transform.position = transform.position + delta.normalized * 7;
+        camera.transform.position = transform.position + delta.normalized * 7;*/
+
+        Vector3 targetPosition = camera.transform.position + _offset;
+        camera.transform.position = Vector3.Lerp(camera.transform.position, targetPosition, 0.25f);
+        /*camera.transform.position = camera.transform.position + (camera.transform.position - transform.position);*/
     }
 }
