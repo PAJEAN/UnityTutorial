@@ -32,6 +32,7 @@ public class BallControllerGolf : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         _offset = camera.transform.position - transform.position;
     }
 
@@ -83,19 +84,28 @@ public class BallControllerGolf : MonoBehaviour
         UpdateTimeSpaceDown();
 
 
+        // and rotate by the rotation
+
+        transform.Rotate(_currentSpeed * 10);
+
+       /* if (_rb.angularVelocity.magnitude < desiredAngularVelocity)
+        {*/
+            //scales the acceleration each frame
+        /*}*/
+
         /*camera.transform.position = Vector3.MoveTowards(camera.transform.position, this.transform.position, -(7f - Vector3.Distance(camera.transform.position, this.transform.position)));*/
     }
 
     private void LateUpdate()
     {
-        RotateCamera();
+        // RotateCamera();
     }
 
     void FixedUpdate()
     {
         if (_spaceUpEvent)
         {
-            _rb.AddForce(_currentSpeed, ForceMode.Acceleration);
+            _rb.AddForce(_currentSpeed, ForceMode.VelocityChange);
             _spaceUpEvent = false;
             _timeSpaceKeyDown = 0f;
             _currentSpeed = Vector3.zero;
@@ -123,17 +133,17 @@ public class BallControllerGolf : MonoBehaviour
             camera.transform.RotateAround(this.transform.position,
                                             camera.transform.right,
                                             -Input.GetAxis("Mouse Y") * 5f);
-
         }
 
-        
+
         /*Vector3 delta = camera.transform.position - transform.position;
         *//*delta.y = 0; // Keep same Y level*//*
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, transform.position + delta.normalized * 7, 0.5f);
         camera.transform.position = transform.position + delta.normalized * 7;*/
 
-        Vector3 targetPosition = camera.transform.position + _offset;
-        camera.transform.position = Vector3.Lerp(camera.transform.position, targetPosition, 0.25f);
-        /*camera.transform.position = camera.transform.position + (camera.transform.position - transform.position);*/
+        // _offset = camera.transform.position - transform.position;
+        /*Vector3 targetPosition = camera.transform.position + _offset;
+        camera.transform.position = Vector3.Lerp(camera.transform.position, targetPosition, 0.25f);*/
+        // camera.transform.position = camera.transform.position + _offset;
     }
 }
