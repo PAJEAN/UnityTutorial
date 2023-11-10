@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/FlagCollision.cs" />
      <Compile Include="Assets/Scripts/BallController.cs" />
+     <Compile Include="Assets/Scripts/SpawnBall.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/home/pajean/Unity/Hub/Editor/2021.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
