@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Borders
   - Hole
+  - Spawn
+  - UI_nbHitText
+  - UI_boostBar
   layers:
   - Default
   - TransparentFX

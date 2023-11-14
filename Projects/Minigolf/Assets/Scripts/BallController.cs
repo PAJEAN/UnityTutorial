@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
     public float baseSpeed = 10f;
     public float maxTimeSpaceKeyDown = 3f;
-    public GameObject startPoint;
-    public Text nbHitText;
-
+    
+    private Text _nbHitText;
+    private Image _greenBar;
     private Rigidbody _rb;
     private Vector3 _applyForce;
+    private GameObject _spawnPoint;
     private bool _spaceDown = false;
     private bool _spaceUp = false;
     private float _spaceKeyDownDuration = 0f;
-    private float _currentBoostValue;
     private int _nbHit = 0;
 
     private void Awake()
@@ -27,6 +28,10 @@ public class BallController : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _spawnPoint = GameObject.FindGameObjectWithTag("Spawn");
+        _nbHitText = GameObject.FindGameObjectWithTag("UI_nbHitText").GetComponent<Text>();
+        _greenBar = GameObject.FindGameObjectWithTag("UI_boostBar").GetComponent<Image>();
+        _greenBar.fillAmount = 0;
     }
 
     // Update is called once per frame
@@ -40,6 +45,8 @@ public class BallController : MonoBehaviour
         if (_spaceDown)
         {
             _spaceKeyDownDuration += Time.deltaTime;
+
+            _greenBar.fillAmount = _spaceKeyDownDuration / maxTimeSpaceKeyDown;
         }
 
         if (Input.GetKeyUp(KeyCode.Space) || _spaceKeyDownDuration > maxTimeSpaceKeyDown)
@@ -50,6 +57,9 @@ public class BallController : MonoBehaviour
             _applyForce = dir * baseSpeed * _spaceKeyDownDuration;
             _applyForce.y = 0;
             _nbHit += 1;
+
+            _greenBar.fillAmount = 0;
+
             UpdateUi();
         }
     }
@@ -67,21 +77,33 @@ public class BallController : MonoBehaviour
 
     void UpdateUi()
     {
-        nbHitText.text = _nbHit.ToString();
+        _nbHitText.text = _nbHit.ToString();
     }
 
     void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Borders"))
         {
-            _rb.velocity = Vector3.zero;
-            transform.position = startPoint.transform.position;
+            StopBall();
+            Vector3 _spawnPosition = _spawnPoint.transform.position;
+            transform.position = new Vector3(_spawnPosition.x, _spawnPosition.y + 0.25f, _spawnPosition.z);
         }
 
         if (col.CompareTag("Hole"))
         {
-            _rb.velocity = Vector3.zero;
+            StopBall();
             Debug.Log("WIN !");
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(currentSceneIndex + 1);
+            }
         }
+    }
+
+    private void StopBall()
+    {
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
     }
 }

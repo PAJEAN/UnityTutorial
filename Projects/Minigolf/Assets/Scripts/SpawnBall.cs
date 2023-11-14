@@ -10,6 +10,6 @@ public class SpawnBall : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _player.transform.position = transform.position;
+        _player.transform.position = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z);
     }
 }
