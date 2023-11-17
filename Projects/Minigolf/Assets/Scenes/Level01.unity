@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1467,6 +1467,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 276355667777526840, guid: 222ee14983ab3454aa2c1f5e2a5cfdab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276355667777526840, guid: 222ee14983ab3454aa2c1f5e2a5cfdab, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276355667777526840, guid: 222ee14983ab3454aa2c1f5e2a5cfdab, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276355667777526840, guid: 222ee14983ab3454aa2c1f5e2a5cfdab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1514,6 +1526,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 276355667777526841, guid: 222ee14983ab3454aa2c1f5e2a5cfdab, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276355667777526842, guid: 222ee14983ab3454aa2c1f5e2a5cfdab, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 222ee14983ab3454aa2c1f5e2a5cfdab, type: 3}
 --- !u!1001 &467887862115239142
@@ -1523,6 +1543,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 467887863033006240, guid: a293d0c0543ba44ed9ac6fa575cf300a, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 467887863033006242, guid: a293d0c0543ba44ed9ac6fa575cf300a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1710,6 +1734,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3827188007780761501, guid: dda0e765ab2db9c4eafe633b9b7470a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827188007780761503, guid: dda0e765ab2db9c4eafe633b9b7470a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
