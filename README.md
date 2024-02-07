@@ -1,58 +1,71 @@
-<style>
-    .image {
-        border: 2px solid black;
-        border-radius: 15px;
-        overflow:hidden;
-    }
-</style>
-
 # Unity
 
-## Installation (Windows)
+## Installation
+
+* Vidéo d'installation de Unity sous Windows 10 et 11 : https://www.youtube.com/watch?v=Kh_FD0Ypdhg
+* Vidéo d'installation de Unity sous Ubuntu 22.04 : https://www.youtube.com/watch?v=JJDb2aeXlhA
+* Vidéo pour configurer VS Code avec Unity sous Ubuntu (ou autres OS compatibles) : https://www.youtube.com/watch?v=iZ8r9y3AfBU (à partir de 10min35s)
+* Vidéo pour installer Unity sous Mac : https://www.youtube.com/watch?v=dqJbCjPsqyg
+
+## Exemple d'installation pour Windows 10 ou 11
 
 * Télécharger [Unity Hub](https://unity.com/download).
 
-<figure>
-    <img src="./Images/unityhub_download.png" alt="Image." class="image"/>
-    <figcaption style="text-align: center;" class="green">Cliquer sur <i>Download for Windows</i>.</figcaption>
-</figure>
+<div align="center">
+    <br>
+    <img src="./Images/unityhub_download.png" alt="Image."/>
+    <div align="center"><i>Cliquer sur Download for Windows</i>.</div>
+    <br>
+</div>
 
 * Installer Unity Hub.
 * Lancer Unity Hub.
 * Créer un compte gratuit.
 
-<figure>
+<div align="center">
+    <br>
     <img src="./Images/unityhub_createAccount.png" alt="Image." class="image"/>
-    <figcaption style="text-align: center;" class="green">Cliquer sur <i>Create account</i>.</figcaption>
-</figure>
+    <div align="center"><i>Cliquer sur Create account</i>.</div>
+    <br>
+</div>
 
-* Installer l'éditeur de Unity (Accepter les termes de la licence).
+* Installer l'éditeur de Unity en version LTS (Accepter les termes de la licence).
 
-<figure>
+<div align="center">
+    <br>
     <img src="./Images/unity_downloadEditor.png" alt="Image." class="image"/>
-    <figcaption style="text-align: center;" class="green">Cliquer sur <i>Install Unity Editor</i>.</figcaption>
-</figure>
+    <div align="center" style="text-align: center;">Cliquer sur <i>Install Unity Editor</i>.</div>
+    <br>
+</div>
 
-* Installer Visual Studio via l'ajout d'un module à l'éditeur.
+* Si Visual Studio Community n'a pas été installé via l'installation de l'éditeur, installer le en ajoutant un module à l'éditeur.
 
-<figure>
+<div align="center">
+    <br>
     <img src="./Images/unityhub_addModules.png" alt="Image." class="image"/>
-    <figcaption style="text-align: center;" class="green">Cliquer sur <i>Add modules</i>.</figcaption>
-</figure>
+    <div align="center"><i>Cliquer sur Add modules</i>.</div>
+    <br>
+</div>
 
 * Paramétrer Visual Studio (une fenêtre s'ouvre suite à l'installation).
 
-<figure>
+<div align="center">
+    <br>
     <img src="./Images/visualStudio_installUnity.png" alt="Image." class="image"/>
-    <figcaption style="text-align: center;" class="green">Cocher <i>Game development with Unity</i> et <b>décocher</b> sur la droite Unity Hub.</figcaption>
-</figure>
+    <div align="center"><i>Cocher Game development with Unity et <b>décocher</b> sur la droite Unity Hub.</i></div>
+    <br>
+</div>
+
+* Ajouter une licence à votre projet *Get a free personal license" via *Manage licenses*.
 
 ## Création d'un nouveau projet
 
 * Cliquer sur *Projects* > *New project*.
 * Cliquer sur 2D et renseigner un nom et un chemin pour sauvegarder votre projet.
 
-<figure>
+<div align="center">
+    <br>
     <img src="./Images/unity_createNew2DProject.png" alt="Image." class="image"/>
-    <figcaption style="text-align: center;" class="green">Cliquer sur <i>Create project</i> lorsque vous avez renseigné les informations de votre projet.</figcaption>
-</figure>
+    <div align="center"><i>Cliquer sur Create project lorsque vous avez renseigné les informations de votre projet.</i></div>
+    <br>
+</div>
