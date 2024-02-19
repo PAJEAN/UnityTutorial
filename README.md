@@ -61,11 +61,11 @@
 ## Création d'un nouveau projet
 
 * Cliquer sur *Projects* > *New project*.
-* Cliquer sur 2D et renseigner un nom et un chemin pour sauvegarder votre projet.
+* Cliquer sur 3D et renseigner un nom et un chemin pour sauvegarder votre projet.
 
 <div align="center">
     <br>
-    <img src="./Images/unity_createNew2DProject.png" alt="Image." class="image"/>
+    <img src="./Images/unity_createNew3DProject.png" alt="Image." class="image"/>
     <div align="center"><i>Cliquer sur Create project lorsque vous avez renseigné les informations de votre projet.</i></div>
     <br>
 </div>
